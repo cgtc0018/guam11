@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グアム満喫旅行 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hiragino Kaku Gothic Pro', 'メイリオ', sans-serif;
+        }
+        body {
+            background: linear-gradient(to bottom, #e0f7fa, #b2ebf2);
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: url('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/png/512/android-boat.png') no-repeat right bottom, linear-gradient(to right, #0077be, #00b4d8);
+            background-size: 100px, cover;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '🌺';
+            font-size: 100px;
+            position: absolute;
+            top: -30px;
+            left: -10px;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .info-item {
+            background-color: rgba(255,255,255,0.2);
+            padding: 10px 15px;
+            border-radius: 30px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, #ffb703, #fd9e02);
+        }
+        .day-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #006d77;
+        }
+        .day-title h2 {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+        .day-title .date {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .timeline {
+            position: relative;
+            margin-left: 30px;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(to bottom, #0077be, #00b4d8);
+            border-radius: 2px;
+        }
+        .event {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .event:last-child {
+            margin-bottom: 0;
+        }
+        .event::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 4px solid #0077be;
+            z-index: 1;
+        }
+        .event-time {
+            font-weight: bold;
+            color: #0077be;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        .event-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .event-desc {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .event-desc::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 15px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid #f8f9fa;
+        }
+        .event-location {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            color: #666;
+        }
+        .event-location::before {
+            content: '📍';
+            margin-right: 5px;
+        }
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            display: inline-block;
+        }
+        .packing-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .packing-item {
+            display: flex;
+            align-items: center;
+            background-color: #e8f4f8;
+            padding: 12px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .packing-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        .caution-list {
+            margin-top: 20px;
+        }
+        .caution-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background-color: #fff3cd;
+            padding: 12px;
+            border-radius: 10px;
+            border-left: 5px solid #ffc107;
+        }
+        .big-emoji {
+            font-size: 2.5rem;
+            margin-right: 15px;
+            display: inline-block;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            flex: 1 0 calc(33.333% - 15px);
+            min-width: 200px;
+            height: 200px;
+            background-color: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .timeline {
+                margin-left: 15px;
+                padding-left: 25px;
+            }
+            .event::before {
+                left: -29px;
+            }
+            .gallery-item {
+                flex: 1 0 calc(50% - 15px);
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery-item {
+                flex: 1 0 100%;
+            }
+        }
+        .special-note {
+            background: linear-gradient(to right, #fdcb6e, #e17055);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .special-note::after {
+            content: '🌟';
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            font-size: 40px;
+            opacity: 0.3;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .action-button {
+            background: linear-gradient(to right, #0077be, #00b4d8);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .action-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .photo-placeholder {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(-45deg, #83c5be, #006d77, #0077be, #00b4d8);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: white;
+            font-weight: bold;
+        }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏝️ グアム満喫旅行 2025 🏝️</h1>
+            <div class="subtitle">南国パラダイスで最高の思い出を作ろう！</div>
+            <div class="info">
+                <div class="info-item">📅 2025年6月14日(土)〜15日(日)</div>
+                <div class="info-item">👥 参加者: 10名</div>
+                <div class="info-item">🏨 デュシットビーチリゾート</div>
+            </div>
+        </header>
+
+        <div class="special-note pulse">
+            <h3>⚠️ 旅行まであと40日！準備はお早めに ⚠️</h3>
+            <p>パスポートの有効期限確認・海外旅行保険の加入もお忘れなく！</p>
+        </div>
+
+        <div class="card">
+            <div class="day-title">
+                <h2>Day 1</h2>
+                <div class="date">6月14日（土）</div>
+            </div>
+            <div class="timeline">
+                <div class="event">
+                    <div class="event-time">10:00</div>
+                    <div class="event-title"><span class="emoji">🏨</span>ホテルロビー集合</div>
+                    <div class="event-desc">
+                        全員揃ったら、徒歩でビーチへ移動します。水着・タオル・日焼け止めをお忘れなく！
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">10:30</div>
+                    <div class="event-title"><span class="emoji">🏄‍♂️</span>水上アクティビティ体験</div>
+                    <div class="event-desc">
+                        バナナボートでスリル満点の海上アドベンチャーを満喫！または、パラセーリングで空からグアムの海を一望できます。青い海と空の絶景をお楽しみに✨
+                    </div>
+                    <div class="event-location">Tropical Watersports Guam</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">12:30</div>
+                    <div class="event-title"><span class="emoji">🍽️</span>ランチ</div>
+                    <div class="event-desc">
+                        チャモロ料理の名店で、ジューシーなリブBBQや名物フィナデニソースが楽しめる！地元食材の味を堪能しましょう。
+                    </div>
+                    <div class="event-location">PROA Restaurant</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">14:00</div>
+                    <div class="event-title"><span class="emoji">🛍️</span>ショッピングタイム</div>
+                    <div class="event-desc">
+                        グアム最大級のモールで、お土産やブランド品、トロピカルグッズが充実。カフェも多数あるので、ひと休みも可能です。
+                    </div>
+                    <div class="event-location">Micronesia Mall</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">16:00</div>
+                    <div class="event-title"><span class="emoji">🏖️</span>自由時間＆海遊び</div>
+                    <div class="event-desc">
+                        透明度抜群の海と白砂のビーチで、シュノーケリングやのんびり散策。絶景の夕日も楽しみましょう。
+                    </div>
+                    <div class="event-location">Tumon Beach</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">17:00</div>
+                    <div class="event-title"><span class="emoji">🛏️</span>ホテル帰着・解散</div>
+                    <div class="event-desc">
+                        各自自由行動。夕食やショッピングをお楽しみください。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="day-title">
+                <h2>Day 2</h2>
+                <div class="date">6月15日（日）</div>
+            </div>
+            <div class="timeline">
+                <div class="event">
+                    <div class="event-time">9:00</div>
+                    <div class="event-title"><span class="emoji">🏨</span>ホテルロビー集合</div>
+                    <div class="event-desc">
+                        貴重品・パスポートをお忘れなく！車で絶景スポットへ移動します。
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">9:30</div>
+                    <div class="event-title"><span class="emoji">📸</span>観光</div>
+                    <div class="event-desc">
+                        断崖から見下ろす青い海と空！ハートのモニュメント前で記念撮影。インスタ映え抜群のロマンチックスポットです。
+                    </div>
+                    <div class="event-location">恋人岬（Two Lovers Point）</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">10:30</div>
+                    <div class="event-title"><span class="emoji">🛍️</span>お土産ショッピング</div>
+                    <div class="event-desc">
+                        地元の雑貨・お菓子・アロハシャツやハンドメイドアクセサリーまで、グアム土産が一挙に揃います！
+                    </div>
+                    <div class="event-location">アガニアショッピングセンター（Agana Shopping Center）</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">12:00</div>
+                    <div class="event-title"><span class="emoji">☕</span>カフェランチ</div>
+                    <div class="event-desc">
+                        アサイーボウルやラテアートが人気。南国ムード満点のおしゃれカフェでほっと一息。
+                    </div>
+                    <div class="event-location">Infusion Coffee & Tea</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">13:00</div>
+                    <div class="event-title"><span class="emoji">🧳</span>ホテル帰着</div>
+                    <div class="event-desc">
+                        パッキング＆チェックアウト準備
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">14:00</div>
+                    <div class="event-title"><span class="emoji">✈️</span>チェックアウト</div>
+                    <div class="event-desc">
+                        空港へ移動します。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">🧳</span>持ち物リスト</h2>
+            <div class="packing-list">
+                <div class="packing-item"><span class="emoji">🛂</span>パスポート</div>
+                <div class="packing-item"><span class="emoji">👙</span>水着</div>
+                <div class="packing-item"><span class="emoji">👡</span>サンダル</div>
+                <div class="packing-item"><span class="emoji">🌞</span>日焼け止め</div>
+                <div class="packing-item"><span class="emoji">💵</span>現金（USD）</div>
+                <div class="packing-item"><span class="emoji">📷</span>カメラ</div>
+                <div class="packing-item"><span class="emoji">🛏️</span>バスタオル</div>
+                <div class="packing-item"><span class="emoji">👒</span>帽子</div>
+                <div class="packing-item"><span class="emoji">🕶️</span>サングラス</div>
+                <div class="packing-item"><span class="emoji">🧴</span>虫除けスプレー</div>
+                <div class="packing-item"><span class="emoji">💊</span>常備薬</div>
+                <div class="packing-item"><span class="emoji">🔌</span>変換プラグ</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">⚠️</span>注意事項</h2>
+            <div class="caution-list">
+                <div class="caution-item">
+                    <span class="big-emoji">🚰</span>
+                    <div>水分補給をこまめに！グアムは日本より暑く、脱水症状になりやすいです。</div>
+                </div>
+                <div class="caution-item">
+                    <span class="big-emoji">👜</span>
+                    <div>スリに注意！特に観光地では貴重品の管理に十分注意しましょう。</div>
+                </div>
+                <div class="caution-item">
+                    <span class="big-emoji">☀️</span>
+                    <div>強い日差し対策必須（帽子・サングラスなど）。日焼け止めは2-3時間おきに塗り直しましょう。</div>
+                </div>
+                <div class="caution-item">
+                    <span class="big-emoji">🚗</span>
+                    <div>レンタカーは右側通行、日本と逆走行なので注意！</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="emoji">📸</span>グアムの絶景スポット</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <div class="photo-placeholder">タモン・ビーチ</div>
+                    <div class="gallery-caption">透明度抜群の海</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">恋人岬</div>
+                    <div class="gallery-caption">インスタ映えの絶景</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">デュシットビーチリゾート</div>
+                    <div class="gallery-caption">高級リゾートホテル</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">チャモロ料理</div>
+                    <div class="gallery-caption">グアム伝統の味</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">パラセーリング</div>
+                    <div class="gallery-caption">空から見る絶景</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">グアムの夕日</div>
+                    <div class="gallery-caption">ロマンチックな景色</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="action-button">📱 LINEグループに参加する</button>
+        </div>
+
+        <footer>
+            <p>グアム満喫旅行 2025 | 最終更新: 2025年5月5日</p>
+            <p>お問い合わせ: guam2025@trip.example.com</p>
+        </footer>
+    </div>
+</body>
+</html>
